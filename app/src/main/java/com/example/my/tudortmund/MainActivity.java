@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ArrayList<String> studenList = new ArrayList<String>();
+        final ArrayList<String> studenList = new ArrayList<String>();
         for(int i =0; i<100;i++){
             studenList.add("Student " + i);
         }
@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
                 toast.show();
                 Intent destailIntent = new Intent(MainActivity.this,
                         DetailActivity.class);
+                destailIntent.putExtra("student_Name", studenList.get(i));
                 startActivity(destailIntent);
             }
         });
